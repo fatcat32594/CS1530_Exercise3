@@ -1,0 +1,25 @@
+apply plugin: 'java'
+repositories {
+	mavenCentral()
+}
+
+apply plugin: 'application'
+mainClassName = 'srh89.Exercise3'
+
+dependencies {
+	testCompile 'junit:junit:4.12'
+}
+
+run {
+	systemProperties System.getProperties()
+	if(System.getProperty("args") != null) {
+		args System.getProperty("args").split()
+	}
+}
+
+task sequencehelp {
+	doLast {
+		println "Integer Sequence Project"
+		println "Given an integer n as an argument, displays Tri(n) and LC(n)"
+	}
+}
